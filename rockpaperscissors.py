@@ -40,7 +40,7 @@ fb=cv2.imread('youloose.jpeg')
 yes=cv2.imread('yes.png')
 no=cv2.imread('no.png')
 again=cv2.imread('again.jpg')
-rr=cv2.imread('areu.jpg')
+rr=cv2.imread('areu.png')
 
 
 gameload=1
@@ -171,6 +171,7 @@ while(gameload==1):
         if(scoring == 0):
           cv2.imshow('computer_score',zero)
           cv2.imshow('human_score',zero)
+          cv2.imshow('comp',rr)
 
 
 
