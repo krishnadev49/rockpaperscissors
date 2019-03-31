@@ -8,9 +8,17 @@ cap=cv2.VideoCapture(0)
 cv2.startWindowThread()
 cv2.namedWindow('result',cv2.WINDOW_NORMAL)
 cv2.namedWindow('comp',cv2.WINDOW_NORMAL)
-cv2.namedWindow('frame',cv2.WINDOW_NORMAL)
+
 cv2.namedWindow('human_score',cv2.WINDOW_NORMAL)
 cv2.namedWindow('computer_score',cv2.WINDOW_NORMAL)
+cv2.resizeWindow('comp', 640, 478)
+cv2.resizeWindow('result', 200, 200)
+cv2.resizeWindow('human_score', 200, 200)
+cv2.resizeWindow('computer_score', 200, 200)
+cv2.moveWindow('human_score',508,515)
+cv2.moveWindow('result',713,515)
+cv2.moveWindow('computer_score',920,515)
+
 
 
 
@@ -32,6 +40,7 @@ fb=cv2.imread('youloose.jpeg')
 yes=cv2.imread('yes.png')
 no=cv2.imread('no.png')
 again=cv2.imread('again.jpg')
+rr=cv2.imread('areu.jpg')
 
 
 gameload=1
@@ -156,13 +165,18 @@ def currentscorehuman():
 
 while(gameload==1):
     while(gamestart==1):
+
         t=["Rock","Paper","Scissors"]
 
         if(scoring == 0):
           cv2.imshow('computer_score',zero)
           cv2.imshow('human_score',zero)
+
+
+
           scoring=1
           cv2.imshow('result',vs)
+
 
 
         _,feed=cap.read()
